@@ -1,4 +1,4 @@
-package io.springapplication.ratingdataservice.resources;
+package io.springapplication.ratingdataservice.controller;
 
 
 import io.springapplication.ratingdataservice.models.Rating;
@@ -19,9 +19,9 @@ public class RatingDataResources {
     public RatingRepositroy ratingRepositroy;
 
     @GetMapping("count")
-    public List<Rating> getAllRating(){
+    public int getAllRating(){
 
-        return ratingRepositroy.findAll();
+        return ratingRepositroy.findAll().size();
     }
 
     @RequestMapping("/findById/{movieId}")
