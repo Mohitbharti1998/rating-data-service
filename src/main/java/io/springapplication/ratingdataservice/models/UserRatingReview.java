@@ -10,20 +10,25 @@ import java.util.List;
 
 
 @Component
-public class UserRating {
+public class UserRatingReview {
 
-    private List<Rating> userRating;
+    private long rating;
 
+    private String review;
 
-
-    public List<Rating> getUserRating() {
-        return userRating;
+    public long getRating() {
+        return rating;
     }
 
-
-    public void setUserRating(List<Rating> userRating) {
-        this.userRating = userRating;
+    public void setRating(long rating) {
+        this.rating = rating;
     }
 
+    public String getReview() {
+        return review;
+    }
 
+    public void setReview(String review) {
+        this.review = review;
+    }
 }
