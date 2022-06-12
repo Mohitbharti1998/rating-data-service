@@ -5,10 +5,20 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class Meta {
+public class Response {
     private String status;
 
-    private List<Rating> data;
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    private String error;
+
+    private Object data;
 
     public String getStatus() {
         return status;
@@ -18,11 +28,12 @@ public class Meta {
         this.status = status;
     }
 
-    public List<Rating> getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(List<Rating> data) {
+    public void setData(Object data) {
         this.data = data;
     }
+
 }
