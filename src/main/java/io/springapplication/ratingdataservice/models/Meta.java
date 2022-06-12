@@ -1,23 +1,14 @@
 package io.springapplication.ratingdataservice.models;
 
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
 public class Meta {
-    int code;
-    String status;
-    int description;
+    private String status;
 
-    public Meta(int code, String status, int description) {
-        this.code = code;
-        this.status = status;
-        this.description = description;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
+    private List<Rating> data;
 
     public String getStatus() {
         return status;
@@ -27,11 +18,11 @@ public class Meta {
         this.status = status;
     }
 
-    public int getDescription() {
-        return description;
+    public List<Rating> getData() {
+        return data;
     }
 
-    public void setDescription(int description) {
-        this.description = description;
+    public void setData(List<Rating> data) {
+        this.data = data;
     }
 }

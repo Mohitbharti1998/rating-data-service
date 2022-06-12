@@ -2,6 +2,7 @@ package io.springapplication.ratingdataservice.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 @Document(collection = "movieRatings")
 public class Rating {
