@@ -5,6 +5,7 @@ import io.springapplication.ratingdataservice.models.Rating;
 import io.springapplication.ratingdataservice.models.UserRating;
 import io.springapplication.ratingdataservice.repositroy.RatingRepositroy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -26,11 +27,11 @@ public class RatingDataResources {
     }
 
     @GetMapping("/fetchAll")
-    public String getAll(){
+    public UserRating getAll(){
 
         userRating.setUserRating(ratingRepositroy.findAll());
 
-        return userRating.getUserRating().toString();
+        return userRating;
     }
 
     @RequestMapping("/findById/{movieId}")
@@ -44,10 +45,10 @@ public class RatingDataResources {
     }
 
 
-    @RequestMapping(value = "/insert")
+    @RequestMapping("/insert")
     public Rating insertUserRating(@RequestBody Rating insert){
-        ratingRepositroy.insert(insert);
-        return insert;
+        Rating rating = ratingRepositroy.insert(insert);
+        return rating;
     }
 
 
